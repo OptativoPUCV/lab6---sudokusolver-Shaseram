@@ -51,13 +51,20 @@ int is_valid(Node* n){
   
   for(int i = 0 ; i < 9 ; i++) {
     for (int j = 0 ; j < 9 ; j++) {
-      
+      if(i == 0) {
+        if(array[n->sudo[i][j]] == 0) {
+          array[n->sudo[i][j]] = 1;
+        } else {
+          verificador = 1;
+        }
+      }
     }
   }
   
-  
-  
-  return 1;
+  if (verificador == 1) {
+    return 0;
+  } else return 1;
+
 }
 
 
