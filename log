@@ -2,3 +2,17 @@ Sat 29 Apr 2023 11:42:02 PM UTC:
  tests:  0|5
 total_score: 0/70
 67163a8
+Wed 03 May 2023 04:58:43 AM UTC: 
+ sudoku.c | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:55:7: error: variable ‘auxCol’ set but not used [-Werror=unused-but-set-variable]
+   55 |   int auxCol = 0;
+      |       ^~~~~~
+sudoku.c:54:7: error: variable ‘auxFila’ set but not used [-Werror=unused-but-set-variable]
+   54 |   int auxFila = 0;
+      |       ^~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+a2529ef
