@@ -131,3 +131,14 @@ sudoku.c:47:8: error: variable ‘array’ set but not used [-Werror=unused-but-
 cc1: all warnings being treated as errors
 Compilation failed
 adc1ef6
+Wed 03 May 2023 02:44:38 PM UTC: 
+ sudoku.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:50:7: error: unused variable ‘verificador’ [-Werror=unused-variable]
+   50 |   int verificador = 0;
+      |       ^~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+21ae18d
