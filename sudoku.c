@@ -44,8 +44,10 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-
-
+  int *array;
+  array = (int*) calloc(sizeof(int),10);
+  
+  
   
   return 1;
 }
