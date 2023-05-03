@@ -75,19 +75,17 @@ int is_valid(Node* n){
   }
 
  
-    for(int i = 0 ; i < 9 ; i+=3) {
-      for(int j = 0 ; j < 9 ; j+=3) {
-      array = (int*) calloc(sizeof(int),10);
-      if (array == NULL) exit(EXIT_FAILURE);
-      for(int p = i ; p < i + 3 ; p++) {
-        for(int q = j ; q < j + 3 ; q++) {
-          if (array[n->sudo[p][q]] == 1) {
-            validar++;
-            break;
-          } else {
-            array[n->sudo[p][q]] = 1;
-          }
-        }
+  for(int k = 0 ; k < 9 ; k++) {
+    array = (int*) calloc(sizeof(int),10);
+    if (array == NULL) exit(EXIT_FAILURE);
+    for(int p = 0 ; p < 9 ; p++) {
+      int i = 3*(k/3) + (p/3);
+      int j = 3*(k%3) + (p%3);
+      if(array[n->sudo[i][j]] == 1) {
+        validar++;
+        break;
+      } else {
+        array[n->sudo[i][j]] = 1;
       }
     }
   }
