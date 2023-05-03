@@ -76,3 +76,17 @@ sudoku.c:70:35: error: ‘auxFila’ may be used uninitialized in this function 
 cc1: all warnings being treated as errors
 Compilation failed
 436eccd
+Wed 03 May 2023 05:17:27 AM UTC: 
+ sudoku.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:55:7: error: variable ‘auxCol’ set but not used [-Werror=unused-but-set-variable]
+   55 |   int auxCol = 0;
+      |       ^~~~~~
+sudoku.c:54:7: error: variable ‘auxFila’ set but not used [-Werror=unused-but-set-variable]
+   54 |   int auxFila = 0;
+      |       ^~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+78550b9
