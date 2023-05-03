@@ -45,13 +45,14 @@ void print_node(Node* n){
 
 int is_valid(Node* n){
   int *array;
-  
+  int validar = 0;
   for(int i = 0 ; i < 9 ; i++) {
     array = (int*) calloc(sizeof(int),10);
     if (array == NULL) exit(EXIT_FAILURE);
     for (int j = 0 ; j < 9 ; j++) {
       if(array[n->sudo[i][j]] == 1) {
-        return 0;
+        validar++;
+        break;
       } else {
         array[n->sudo[i][j]] = 1;
       }
@@ -63,7 +64,8 @@ int is_valid(Node* n){
     if (array == NULL) exit(EXIT_FAILURE);
     for(int i = 0 ; i < 9 ; i++) {
       if(array[n->sudo[i][j]] == 1) {
-        return 0;
+        validar++;
+        break;
       } else {
         array[n->sudo[i][j]] = 1;
       }
@@ -77,7 +79,8 @@ int is_valid(Node* n){
       for(int p = i ; p < i + 3 ; p++) {
         for(int l = j ; l < j + 3 ; l++) {
           if(array[n->sudo[p][l]] == 1) {
-            return 0;
+            validar++;
+            break;
           } else {
             array[n->sudo[p][l]] = 1;
           }
@@ -85,9 +88,11 @@ int is_valid(Node* n){
       }
     }
   }
-  
-  
-  return 1;
+
+
+  if(validar == 0) {
+    return 1;
+  } else return 0;
 
 }
 
