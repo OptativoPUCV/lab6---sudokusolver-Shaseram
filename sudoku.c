@@ -71,7 +71,7 @@ int is_valid(Node* n){
   }
 
   for(int i = 0 ; i < 9 ; i+=3) {
-    for(int j = 0 ; i < 9 ; j+=3) {
+    for(int j = 0 ; j < 9 ; j+=3) {
       array = (int*) calloc(sizeof(int),10);
       if (array == NULL) exit(EXIT_FAILURE);
       for(int p = i ; p < i + 3 ; p++) {
