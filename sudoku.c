@@ -45,24 +45,22 @@ void print_node(Node* n){
 
 int is_valid(Node* n){
 
-    return 1;
+
+  
+  return 1;
 }
 
 
 List* get_adj_nodes(Node* n){
   List* list=createList();
-
+  
   if (n->sudo[0][2] == 0) {
-    
     for (int numero = 1 ; numero <= 9 ; numero++) {
       Node* nodoAd = copy(n);
       nodoAd->sudo[0][2] = numero;
-      pushBack(list, nodoAd);
+      pushFront(list, nodoAd);
     }
   }
-  
-  
-
   
   return list;
 }
