@@ -45,11 +45,12 @@ void print_node(Node* n){
 
 int is_valid(Node* n){
   int *array;
-  if (array == NULL) exit(EXIT_FAILURE);
+  
   
   
   for(int i = 0 ; i < 9 ; i++) {
     array = (int*) calloc(sizeof(int),10);
+    if (array == NULL) exit(EXIT_FAILURE);
     for (int j = 0 ; j < 9 ; j++) {
       if(array[n->sudo[i][j]] == 1) {
         return 0;
