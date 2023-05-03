@@ -95,7 +95,7 @@ int is_valid(Node* n){
 List* get_adj_nodes(Node* n){
   List* list=createList();
 
-  for (int p = 0 ; p <= 9 ; p++) {
+  for (int p = 1 ; p <= 9 ; p++) {
     Node* nodoAd = copy(n);
     int validar = 0;
     for (int i = 0 ; i < 9 ; i++) {
