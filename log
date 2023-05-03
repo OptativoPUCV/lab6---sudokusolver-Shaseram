@@ -64,3 +64,15 @@ Wed 03 May 2023 05:15:39 AM UTC:
  tests:  0|5
 total_score: 0/70
 ea3a3d1
+Wed 03 May 2023 05:16:04 AM UTC: 
+ sudoku.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:70:35: error: ‘auxCol’ may be used uninitialized in this function [-Werror=maybe-uninitialized]
+   70 |     nodoAd->sudo[auxFila][auxCol] = 1;
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+sudoku.c:70:35: error: ‘auxFila’ may be used uninitialized in this function [-Werror=maybe-uninitialized]
+cc1: all warnings being treated as errors
+Compilation failed
+436eccd

@@ -51,8 +51,8 @@ int is_valid(Node* n){
 
 List* get_adj_nodes(Node* n){
   List* list=createList();
-  int auxFila = 0;
-  int auxCol = 0;
+  int auxFila;
+  int auxCol;
   
   for (int i = 0 ; i < 9 ; i++) {
     for (int j = 0 ; j < 9 ; j++) {
