@@ -16,3 +16,9 @@ sudoku.c:54:7: error: variable ‘auxFila’ set but not used [-Werror=unused-bu
 cc1: all warnings being treated as errors
 Compilation failed
 a2529ef
+Wed 03 May 2023 05:02:49 AM UTC: 
+ sudoku.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+ tests:  0|5
+total_score: 0/70
+ac285dc
