@@ -51,21 +51,23 @@ int is_valid(Node* n){
 
 List* get_adj_nodes(Node* n){
   List* list=createList();
-
+  int auxFila = 0;
+  int auxCol = 0;
   
-  /*for (int i = 0 ; i < 9 ; i++) {
+  for (int i = 0 ; i < 9 ; i++) {
     for (int j = 0 ; j < 9 ; j++) {
       if(n->sudo[i][j] == 0) {
         auxFila = i;
         auxCol = j;
+        break;
       }
     }
   }
-*/
+
   int num = 1;
   for (int numero = 1 ; numero <= 9 ; numero++) {
     Node* nodoAd = copy(n);
-    nodoAd->sudo[0][2] = num;
+    nodoAd->sudo[auxFila][auxCol] = num;
     num++;
     pushFront(list, nodoAd);
   }
