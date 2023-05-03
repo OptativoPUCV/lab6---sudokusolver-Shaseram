@@ -52,12 +52,12 @@ int is_valid(Node* n){
     for (int j = 0 ; j < 9 ; j++) {
       if(array[n->sudo[i][j]] == 1) {
         validar++;
-        free(array);
         break;
       } else {
         array[n->sudo[i][j]] = 1;
       }
     }
+    free(array);
   }
   
   for(int j = 0 ; j < 9 ; j++) {
@@ -66,33 +66,34 @@ int is_valid(Node* n){
     for(int i = 0 ; i < 9 ; i++) {
       if(array[n->sudo[i][j]] == 1) {
         validar++;
-        free(array);
         break;
       } else {
         array[n->sudo[i][j]] = 1;
       }
     }
+    free(array);
   }
 
-  for(int i = 0 ; i < 9 ; i+=3) {
-    for(int j = 0 ; j < 9 ; j+=3) {
+ 
+    for(int i = 0 ; i < 9 ; i+=3) {
       array = (int*) calloc(sizeof(int),10);
       if (array == NULL) exit(EXIT_FAILURE);
+      
+      for(int j = 0 ; j < 9 ; j+=3) {
+      int array[10] = {0};
       for(int p = i ; p < i + 3 ; p++) {
-        for(int l = j ; l < j + 3 ; l++) {
-          if(array[n->sudo[p][l]] == 1) {
+        for(int q = j ; q < j + 3 ; q++) {
+          if (array[n->sudo[p][q]] == 1) {
             validar++;
-            free(array);
             break;
           } else {
-            array[n->sudo[p][l]] = 1;
+            array[n->sudo[p][q]] = 1;
           }
         }
       }
     }
   }
-
-
+  
   if(validar == 0) {
     return 1;
   } else return 0;
