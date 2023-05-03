@@ -62,9 +62,11 @@ List* get_adj_nodes(Node* n){
     }
   }
 */
+  int num = 1;
   for (int numero = 1 ; numero <= 9 ; numero++) {
     Node* nodoAd = copy(n);
-    nodoAd->sudo[0][2] = numero;
+    nodoAd->sudo[0][2] = num;
+    num++;
     pushFront(list, nodoAd);
   }
   
