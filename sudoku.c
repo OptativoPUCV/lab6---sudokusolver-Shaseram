@@ -64,12 +64,11 @@ List* get_adj_nodes(Node* n){
     }
   }
 
-  int num = 1;
+  
   for (int numero = 1 ; numero <= 9 ; numero++) {
     Node* nodoAd = copy(n);
-    nodoAd->sudo[auxFila][auxCol] = num;
-    num++;
-    pushFront(list, nodoAd);
+    nodoAd->sudo[auxFila][auxCol] = numero;
+    pushBack(list, nodoAd);
   }
   
 
