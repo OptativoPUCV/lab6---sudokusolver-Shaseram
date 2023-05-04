@@ -59,7 +59,7 @@ int is_valid(Node* n){
         arrayFila[n->sudo[i][j]] = 1;
       }
     }
-    free(arrayFila);
+    
   }
   
   for(int j = 0 ; j < 9 ; j++) {
@@ -71,7 +71,7 @@ int is_valid(Node* n){
         arrayCol[n->sudo[i][j]] = 1;
       }
     }
-    free(arrayCol);
+    
   }
 
  
@@ -87,6 +87,9 @@ int is_valid(Node* n){
       }
     }
   }
+  free(arrayFila);
+  free(arrayCol);
+  free(arraySub);
   
   if(validar == 0) {
     return 1;
