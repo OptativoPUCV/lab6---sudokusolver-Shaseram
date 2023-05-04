@@ -46,9 +46,6 @@ void print_node(Node* n){
 int is_valid(Node* n){
   int arrayFila[10], arrayCol[10], arraySub[10];
   
-
-
-  
   for(int i = 0 ; i < 9 ; i++) {
     for(int x = 0 ; x < 10 ; x++) {
       arrayFila[x] = 0;
@@ -75,17 +72,8 @@ int is_valid(Node* n){
   }
  
 
-
-
-
-
-  
-
-  
   
   return 1;
-
-
 }
 
 
@@ -104,7 +92,7 @@ List* get_adj_nodes(Node* n){
       }
     }
 
-    if(validar == 1) pushBack(list, nodoAd);
+    if(validar == 1 && is_valid(nodoAd) == 1) pushBack(list, nodoAd);
 
   }
 
