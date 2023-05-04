@@ -43,60 +43,44 @@ void print_node(Node* n){
     printf("\n");
 }
 
-int is_valid(Node* n){
-  int *arrayFila, *arrayCol, *arraySub;
-  arrayFila = (int*) calloc(10,sizeof(int));
-  arrayCol = (int*) calloc(10,sizeof(int));
-  arraySub = (int*) calloc(10,sizeof(int));
+int is_valid(Node* n) {
+  int arrayFila[10], arrayCol[10], arraySub[10];
   
-  int validar = 0;
   for(int i = 0 ; i < 9 ; i++) {
-    for (int j = 0 ; j < 9 ; j++) {
+    for(int x = 0 ; x < 10 ; x++) {
+      arrayFila[x] = 0;
+      arrayCol[x] = 0;
+      arraySub[x] = 0;
+    }
+    
+    for(int j = 0 ; j < 9 ; j++) {
+
       if(n->sudo[i][j] != 0) {
         if(arrayFila[n->sudo[i][j]] == 1) {
-          validar++;
-          break;
-        } else {
-          arrayFila[n->sudo[i][j]] = 1;
-        }
+          return 0;
+        } else arrayFila[n->sudo[i][j]] = 1;
       }
-    }
-  }
-  
-  for(int j = 0 ; j < 9 ; j++) {
-    for(int i = 0 ; i < 9 ; i++) {
-      if(n->sudo[i][j] != 0) {
-        if(arrayCol[n->sudo[i][j]] == 1) {
-          validar++;
-          break;
-        } else {
-          arrayCol[n->sudo[i][j]] = 1;
-        }
-      }
-    }
-  }
 
+      if(n->sudo[j][i] != 0) {
+        if(arrayCol[n->sudo[j][i]] == 1) {
+          return 0;
+        } else arrayCol[n->sudo[j][i]] = 1;
+      }
+      
+      int k = 3*(i/3) + j/3;
+      int p = 3*(i%3) + j%3;
+
+      if(n->sudo[k][p] != 0) {
+        if(arraySub[n->sudo[k][p]] == 1) {
+          return 0;
+        }  else arraySub[n->sudo[k][p]] = 1;
+      }
+    }
+  }
  
-  for(int k = 0 ; k < 9 ; k++) {
-    for(int p = 0 ; p < 9 ; p++) {
-      int i = 3*(k/3) + (p/3);
-      int j = 3*(k%3) + (p%3);
-      if(n->sudo[i][j] != 0) {
-        if(arraySub[n->sudo[i][j]] == 1) {
-          validar++;
-          break;
-        } else {
-          arraySub[n->sudo[i][j]] = 1;
-        }
-      }
-    }
-  }
 
   
-  if(validar == 0) {
-    return 1;
-  } else return 0;
-
+  return 1;
 }
 
 
