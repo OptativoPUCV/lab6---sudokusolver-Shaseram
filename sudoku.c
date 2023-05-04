@@ -84,7 +84,7 @@ List* get_adj_nodes(Node* n){
   for (int i = 0 ; i < 9 ; i++) {
     for (int j = 0 ; j < 9 ; j++) {
       if (n->sudo[i][j] == 0) {
-        for (int p = 1 ; p <= 9 ; p++) {
+        for (int p = 1 ; p < 10 ; p++) {
           n->sudo[i][j] = p;
           Node* nodoAd = copy(n);
           if(is_valid(nodoAd) == 1) {
@@ -94,12 +94,21 @@ List* get_adj_nodes(Node* n){
       }
     }
   }
+  /*for (int p = 1 ; p <= 9 ; p++) {
+    Node* nodoAd = copy(n);
+    int validar = 0;
+    for (int i = 0 ; i < 9 ; i++) {
+      for (int j = 0 ; j < 9 ; j++) {
+        if (n->sudo[i][j] == 0 && validar == 0) {
+          nodoAd->sudo[i][j] = p;
+          validar = 1;
+        }
+      }
+    }
 
+    if(validar == 1 && is_valid(nodoAd)) pushBack(list, nodoAd);
 
-
-  
-
-
+  } */
   return list;
 }
 
