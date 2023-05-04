@@ -65,7 +65,7 @@ int is_valid(Node* n) {
       int k = 3*(i/3) + j/3;
       int p = 3*(i%3) + j%3;
 
-      if(arraySub[n->sudo[k][p]] != 0) {
+      if(n->sudo[k][p] != 0) {
         if(arraySub[n->sudo[k][p]] == 1) {
           return 0;
         }  else arraySub[n->sudo[k][p]] = 1;
