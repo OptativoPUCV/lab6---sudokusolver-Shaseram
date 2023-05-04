@@ -61,7 +61,7 @@ int is_valid(Node* n) {
         } else arrayFila[n->sudo[i][j]] = 1;
       }
 
-      if(n->sudo[i][j] != 0) {
+      if(n->sudo[j][i] != 0) {
         if(arrayCol[n->sudo[j][i]] == 1) {
           return 0;
         } else arrayCol[n->sudo[j][i]] = 1;
