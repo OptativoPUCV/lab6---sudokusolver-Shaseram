@@ -43,7 +43,7 @@ void print_node(Node* n){
     printf("\n");
 }
 
-int is_valid(Node* n){
+int is_valid(Node* n) {
   int arrayFila[10], arrayCol[10], arraySub[10];
   
   for(int i = 0 ; i < 9 ; i++) {
@@ -65,9 +65,11 @@ int is_valid(Node* n){
       int k = 3*(i/3) + j/3;
       int p = 3*(i%3) + j%3;
 
-      if(arraySub[n->sudo[k][p]] == 1) {
-        return 0;
-      } else arraySub[n->sudo[k][p]] = 1;
+      if(arraySub[n->sudo[k][p]] != 0) {
+        if(arraySub[n->sudo[k][p]] == 1) {
+          return 0;
+        }  else arraySub[n->sudo[k][p]] = 1;
+      }
     }
   }
  
