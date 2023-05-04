@@ -44,48 +44,52 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-  int *array;
+  int *arrayFila, *arrayCol, *arraySub;
+  arrayFila = (int*) calloc(10,sizeof(int));
+  arrayCol = (int*) calloc(10,sizeof(int));
+  arraySub = (int*) calloc(10,sizeof(int));
+  
   int validar = 0;
   for(int i = 0 ; i < 9 ; i++) {
-    array = (int*) calloc(sizeof(int),10);
-    if (array == NULL) exit(EXIT_FAILURE);
+    arrayFila = (int*) calloc(sizeof(int),10);
+    if (arrayFila == NULL) exit(EXIT_FAILURE);
     for (int j = 0 ; j < 9 ; j++) {
-      if(array[n->sudo[i][j]] == 1) {
+      if(arrayFila[n->sudo[i][j]] == 1) {
         validar++;
         break;
       } else {
-        array[n->sudo[i][j]] = 1;
+        arrayFila[n->sudo[i][j]] = 1;
       }
     }
-    free(array);
+    free(arrayFila);
   }
   
   for(int j = 0 ; j < 9 ; j++) {
-    array = (int*) calloc(sizeof(int),10);
-    if (array == NULL) exit(EXIT_FAILURE);
+    arrayCol = (int*) calloc(sizeof(int),10);
+    if (arrayCol == NULL) exit(EXIT_FAILURE);
     for(int i = 0 ; i < 9 ; i++) {
-      if(array[n->sudo[i][j]] == 1) {
+      if(arrayCol[n->sudo[i][j]] == 1) {
         validar++;
         break;
       } else {
-        array[n->sudo[i][j]] = 1;
+        arrayCol[n->sudo[i][j]] = 1;
       }
     }
-    free(array);
+    free(arrayCol);
   }
 
  
   for(int k = 0 ; k < 9 ; k++) {
-    array = (int*) calloc(sizeof(int),10);
-    if (array == NULL) exit(EXIT_FAILURE);
+    arraySub = (int*) calloc(sizeof(int),10);
+    if (arraySub == NULL) exit(EXIT_FAILURE);
     for(int p = 0 ; p < 9 ; p++) {
       int i = 3*(k/3) + (p/3);
       int j = 3*(k%3) + (p%3);
-      if(array[n->sudo[i][j]] == 1) {
+      if(arraySub[n->sudo[i][j]] == 1) {
         validar++;
         break;
       } else {
-        array[n->sudo[i][j]] = 1;
+        arraySub[n->sudo[i][j]] = 1;
       }
     }
   }
