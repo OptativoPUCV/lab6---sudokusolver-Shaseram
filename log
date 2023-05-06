@@ -417,3 +417,9 @@ sudoku.c:125:9: error: void value not ignored as it ought to be
       |         ^~~~~~
 Compilation failed
 45c3846
+Sat 06 May 2023 06:11:53 AM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  10|0
+total_score: 70/70
+8cca5f5

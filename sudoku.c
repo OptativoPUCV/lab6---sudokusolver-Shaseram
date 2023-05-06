@@ -122,7 +122,7 @@ Node* DFS(Node* initial, int* cont){
   push(S, initial);
   
   
-  while(pop(S) != NULL) {
+  while(top(S) != NULL) {
 
     Node* nodo = top(S);
     pop(S);
