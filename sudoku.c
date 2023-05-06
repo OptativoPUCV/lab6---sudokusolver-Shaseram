@@ -113,11 +113,32 @@ int is_final(Node* n){
       if(n->sudo[i][j] == 0) return 0;
     }
   }
-  
-    return 1;
+  return 1;
 }
 
 Node* DFS(Node* initial, int* cont){
+
+  Stack* S = createStack();
+  push(S, initial);
+  cont++;
+  
+  while(top(S) != NULL) {
+
+    Node* nodo = top(S);
+    if (is_final(top(S)) == 1) {
+      return top(S);
+    } 
+    List* adju = get_adj_nodes(nodo);
+    Node* aux = first(adju);
+    while(aux != NULL) {
+      push(S, nodo);
+      
+      aux = next(adju);
+    }
+    free(nodo);
+  }
+
+  
   return NULL;
 }
 
