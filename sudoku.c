@@ -125,14 +125,14 @@ Node* DFS(Node* initial, int* cont){
   while(top(S) != NULL) {
 
     Node* nodo = top(S);
-    if (is_final(top(S)) == 1) {
-      return top(S);
+    void* temp = top(S);
+    if (is_final(temp) == 1) {
+      return temp;
     } 
     List* adju = get_adj_nodes(nodo);
     Node* aux = first(adju);
     while(aux != NULL) {
-      push(S, aux);
-      
+      push(S, aux);      
       aux = next(adju);
     }
     free(nodo);
@@ -140,9 +140,14 @@ Node* DFS(Node* initial, int* cont){
     (*cont)++;
   }
 
-  
   return NULL;
 }
+
+
+
+
+
+
 
 
 
