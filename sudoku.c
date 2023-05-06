@@ -120,14 +120,14 @@ Node* DFS(Node* initial, int* cont){
 
   Stack* S = createStack();
   push(S, initial);
-  *cont = 0;
   
-  while(top(S) != NULL) {
+  
+  while(is_empty(S) != 1) {
 
     Node* nodo = top(S);
-    void* temp = top(S);
-    if (is_final(temp) == 1) {
-      return temp;
+    
+    if (is_final(nodo) == 1) {
+      return nodo;
     } 
     List* adju = get_adj_nodes(nodo);
     Node* aux = first(adju);
@@ -142,12 +142,6 @@ Node* DFS(Node* initial, int* cont){
 
   return NULL;
 }
-
-
-
-
-
-
 
 
 
