@@ -120,7 +120,7 @@ Node* DFS(Node* initial, int* cont){
 
   Stack* S = createStack();
   push(S, initial);
-  (*cont)++;
+  *cont = 0;
   
   while(top(S) != NULL) {
 
@@ -137,6 +137,7 @@ Node* DFS(Node* initial, int* cont){
     }
     free(nodo);
     pop(S);
+    (*cont)++;
   }
 
   
